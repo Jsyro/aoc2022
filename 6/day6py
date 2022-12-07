@@ -1,0 +1,18 @@
+lines = [line for line in open("input.txt","r")]
+
+signal = lines[0]
+
+marker_length = 14
+
+marker_position: int = None
+
+for ind in range(len(signal)): 
+# for ind in range(10): 
+    possible_marker = signal[ind:ind+marker_length]
+    if len(set(possible_marker)) == marker_length:
+        # all char are different
+        marker_position = ind+marker_length
+        break
+
+
+print(marker_position)
